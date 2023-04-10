@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: abctechnologiesapp
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       name: abctechnologiesapppod
@@ -16,6 +16,10 @@ spec:
       containers:
       - name: abctechnologiescontainer
         image: ucfrance/abctechnologies
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" 
         ports:
         - containerPort: 8080
       
