@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: abctechnologiesapp
-  labels:
-    app: abctechnologiesapp
+  name: abctechnologiesappdeployment
 spec:
+  selector:
+    matchLabels:
+      app: abctechnologiesapp
   replicas: 2
   template:
     metadata:
+      name: abctechnologiesapppod
       labels:
         app: abctechnologiesapp
     spec:
       containers:
-      - name: abctechnologiesapp
+      - name: abctechnologiescontainer
         image: ucfrance/abctechnologies
         ports:
         - containerPort: 8080
-  selector:
-    matchLabels:
-      app: abctechnologiesapp
       
 ---
 apiVersion: v1
