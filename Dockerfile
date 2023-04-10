@@ -1,4 +1,4 @@
-FROM openjdk:8-alphine
+FROM openjdk:8-alpine
 
 RUN apk update && apk add /bin/sh
 
